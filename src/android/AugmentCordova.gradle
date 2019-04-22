@@ -1,0 +1,11 @@
+// Augment Player SDK repository
+repositories {
+    maven {
+        url  "https://dl.bintray.com/augment/augment"
+    }
+}
+
+dependencies {
+    // Augment Player SDK
+    compile('com.ar.augment:augment-player-sdk:1.0.2')
+}

@@ -1,0 +1,60 @@
+{
+  "_from": "augment-cordova",
+  "_id": "augment-cordova@1.0.5",
+  "_inBundle": false,
+  "_integrity": "sha1-f6+bG0zhdBAxqEOCCC2cBZv2rJU=",
+  "_location": "/augment-cordova",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "augment-cordova",
+    "name": "augment-cordova",
+    "escapedName": "augment-cordova",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/augment-cordova/-/augment-cordova-1.0.5.tgz",
+  "_shasum": "7faf9b1b4ce1741031a84382082d9c059bf6ac95",
+  "_spec": "augment-cordova",
+  "_where": "W:\\Downloads\\Duc_CV\\dtest",
+  "author": {
+    "name": "developers@augment.com"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "augment-cordova",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "deprecated": false,
+  "description": "Augment Plugin for the Augment Mobile SDK",
+  "devDependencies": {
+    "babel-cli": "6.24.0",
+    "babel-plugin-transform-flow-strip-types": "6.22.0",
+    "babel-preset-env": "1.2.2",
+    "flow-bin": "0.42.0",
+    "flow-typed": "2.0.0"
+  },
+  "keywords": [
+    "augment",
+    "ar",
+    "augmented reality",
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "license": "MIT",
+  "name": "augment-cordova",
+  "scripts": {
+    "watch": "babel --watch=./src --out-dir=./www"
+  },
+  "version": "1.0.5"
+}

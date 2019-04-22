@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="AugmentCordova" version="1.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>Augment Plugin</name>
+    <description>Augment Plugin</description>
+    <license>MIT</license>
+    <keywords>augment,ar,augmented reality</keywords>
+    <platform name="android">
+        <js-module name="AugmentCordova" src="www/AugmentCordova.js">
+            <clobbers target="AugmentCordova" />
+        </js-module>
+        <framework src="com.android.support:support-v4:+" />
+        <framework src="src/android/AugmentCordova.gradle" custom="true" type="gradleReference" />
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="AugmentCordova">
+                <param name="android-package" value="com.augment.cordovaplugin.AugmentCordova" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.CAMERA"/>
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <activity android:name="com.augment.cordovaplugin.AugmentARActivity"></activity>
+        </config-file>
+        <source-file src="src/android/src/com/augment/cordovaplugin/AugmentCordova.java" target-dir="src/com/augment/cordovaplugin" />
+        <source-file src="src/android/src/com/augment/cordovaplugin/AugmentCordovaButton.java" target-dir="src/com/augment/cordovaplugin" />
+        <source-file src="src/android/src/com/augment/cordovaplugin/AugmentARActivity.java" target-dir="src/com/augment/cordovaplugin" />
+        <resource-file src="src/android/res/layout/activity_augment.xml" target="res/layout/activity_augment.xml" />
+        <resource-file src="src/android/res/layout/dialog_preview_share.xml" target="res/layout/dialog_preview_share.xml" />
+        <!-- Tutorial -->
+        <resource-file src="src/android/res/drawable-xhdpi/en_tuto_sdk_01a.png" target="res/drawable-xhdpi/en_tuto_sdk_01a.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/en_tuto_sdk_02a.png" target="res/drawable-xhdpi/en_tuto_sdk_02a.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/en_tuto_sdk_03a.png" target="res/drawable-xhdpi/en_tuto_sdk_03a.png" />
+        <resource-file src="src/android/res/drawable-xhdpi/en_tuto_sdk_04a.png" target="res/drawable-xhdpi/en_tuto_sdk_04a.png" />
+        <resource-file src="src/android/res/layout/tutorial_screen_01.xml" target="res/layout/tutorial_screen_01.xml" />
+        <resource-file src="src/android/res/layout/tutorial_screen_02.xml" target="res/layout/tutorial_screen_02.xml" />
+        <resource-file src="src/android/res/layout/tutorial_screen_03.xml" target="res/layout/tutorial_screen_03.xml" />
+        <resource-file src="src/android/res/layout/tutorial_screen_04.xml" target="res/layout/tutorial_screen_04.xml" />
+        <!-- Markers data -->
+        <resource-file src="src/common/Augment.xml" target="assets/Augment.xml" />
+        <resource-file src="src/common/Augment.dat" target="assets/Augment.dat" />
+    </platform>
+    <platform name="ios">
+        <js-module name="AugmentCordova" src="www/AugmentCordova.js">
+            <clobbers target="AugmentCordova" />
+        </js-module>
+        <framework src="AugmentPlayerSDK" type="podspec" spec="~> 1.0" />
+        <config-file target="config.xml" parent="/*">
+            <feature name="AugmentCordova">
+                <param name="ios-package" value="AugmentCordova" onload="true" />
+            </feature>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSCameraUsageDescription">
+            <string>Augment needs the Camera to show you Augmented reality</string>
+        </config-file>
+        <header-file src="src/ios/AugmentCordova.h" />
+        <source-file src="src/ios/AugmentCordova.m" />
+        <header-file src="src/ios/AugmentCordovaConfig.h" />
+        <source-file src="src/ios/AugmentCordovaConfig.m" />
+        <header-file src="src/ios/AugmentCordovaButton.h" />
+        <source-file src="src/ios/AugmentCordovaButton.m" />
+        <header-file src="src/ios/AugmentARViewController.h" />
+        <source-file src="src/ios/AugmentARViewController.m" />
+        <source-file src="src/ios/AugmentARViewController.xib" />
+        <!-- Tutorial -->
+        <resource-file src="src/ios/assets/EN_tuto_sdk_01@2x.png" />
+        <resource-file src="src/ios/assets/EN_tuto_sdk_02@2x.png" />
+        <resource-file src="src/ios/assets/EN_tuto_sdk_03@2x.png" />
+        <resource-file src="src/ios/assets/EN_tuto_sdk_04@2x.png" />
+        <!-- Markers data -->
+        <resource-file src="src/common/Augment.xml" target="Augment.xml" />
+        <resource-file src="src/common/Augment.dat" target="Augment.dat" />
+    </platform>
+</plugin>
